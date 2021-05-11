@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -12,7 +12,6 @@ contract TokenSwap {
      * @dev Emitted when 'total' tokens are moved to multiple other accounts
      */
     event MultiSend(uint256 total, address tokenAddress);
-
     
     /**
      * @notice Does multiple ERC20 transfers in one transaction
