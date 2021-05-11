@@ -50,7 +50,7 @@ First, holders deposit their LOCK on a team's address, one by one. When the give
 
 6. The address pushing the migrate button reffered in step (5) MUST BE THE DEPLOYER OF THE UNT TOKEN. It will now have to sign the transaction on MetaMask and have enough ETH to pay one fee of around half a block size. The value should be in the range of the thousands of dollars (according to current gas price). Depending on the amount of holders, there might be a need to split this transaction in two or three. This split will be done automatically, but I explain why for the more curious:
 
-      a. If a single transaction spends more gas than the block gas limit, it gets reverted when it runs out of gas and the sender LOSES ALL THE FEES paid up to that point. This can amount to THOUSANDS of DOLLARS lost. 
+      a. If a single transaction spends more gas than the block gas limit, it gets reverted when it runs out of gas and the sender loses all the fees paid up to that point. This can amount to thousands of dollars lost. 
 
       b. If a single transaction spends close to the block gas limit, it will never be included in a block unless the gas price paid is humongous. This is because a whole-block transaction needs to be the first to be added to a block (needs a virgin block). 
 
