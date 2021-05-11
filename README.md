@@ -50,12 +50,12 @@ First, holders deposit their LOCK on a team's address, one by one. When the give
 
 6. The address pushing the migrate button reffered in step (5) MUST BE THE DEPLOYER OF THE UNT TOKEN. It will now have to sign the transaction on MetaMask and have enough ETH to pay one fee of around half a block size. The value should be in the range of the thousands of dollars (according to current gas price). Depending on the amount of holders, there might be a need to split this transaction in two or three. This split will be done automatically, but I explain why for the more curious:
 
-       a. If a single transaction spends more gas than the block gas limit, it gets reverted when it runs out of gas and the sender LOSES ALL THE FEES paid up to that point. This can amount to THOUSANDS of DOLLARS lost. 
+      a. If a single transaction spends more gas than the block gas limit, it gets reverted when it runs out of gas and the sender LOSES ALL THE FEES paid up to that point. This can amount to THOUSANDS of DOLLARS lost. 
 
-       b. If a single transaction spends close to the block gas limit, it will never be included in a block unless the gas price paid is humongous. This is because a whole-block transaction needs to be the first to be added to a block (needs a virgin block). 
+      b. If a single transaction spends close to the block gas limit, it will never be included in a block unless the gas price paid is humongous. This is because a whole-block transaction needs to be the first to be added to a block (needs a virgin block). 
 
-       c. Thus, we need to find a balance in batching enough transfers to economize on fees, but avoid batching so many that our batch transaction never goes through. We will aim for 150-200 transfers per transaction (around half a block of gas).
+      c. Thus, we need to find a balance in batching enough transfers to economize on fees, but avoid batching so many that our batch transaction never goes through. We will aim for 150-200 transfers per transaction (around half a block of gas).
 
-       An interesting thread on the topic of batching transactions can be found here: https://www.reddit.com/r/ethdev/comments/8ofb32/batching_erc20_transfers_can_let_you_send_over/
+      An interesting thread on the topic of batching transactions can be found here: https://www.reddit.com/r/ethdev/comments/8ofb32/batching_erc20_transfers_can_let_you_send_over/
  
 7. Confirmation will be received for each batch transfer transaction that goes through. In the end of the process, the total UNT air dropped will be compared to the LOCK deposited and the two must match. The approved UNT amount for the migration contract on behalf of the deployer should now be 0.
