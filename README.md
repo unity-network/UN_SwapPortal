@@ -13,9 +13,9 @@ This repository contains the tools that will be used to migrate from the LOCK ER
 
 ## Glossary
 
-Team: The UNT project team
-Holders: Addresses with positive LOCK (old token) balance
-Migration Contract: The smart contract used to air drop the UNT (the new token)
+Team: The UNT project team  
+Holders: Addresses with positive LOCK (old token) balance  
+Migration Contract: The smart contract used to air drop the UNT (the new token)  
 
 
 ## It is important to first understand the specific requirements of this migration
