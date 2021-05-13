@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Meridian Swap Portal</title>
+  <meta name="description" content="Meridian Swap Portal">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="styles.css?v=1.0">
+
+</head>
+
+<body>
+    <div class="content">
+      <div class="page">
+        <h1>Migrant Page</h1>
+        <div id="inputArea">
+          <h2 id="status">Not connected</h2>
+          <input id="connectWallet" type="button" value="Connect" onClick="connect()">
+          <input id="transferBtn" type="button" value="Transfer my LOCKr" onClick="transfer()" disabled>
+          <input id="addressInput" type="text" placeholder="0xbbeba7...">
+          <input id="addressSubmit" type="button" value="Check Status" onClick="checkStatus()">
+        </div>
+        <div class="console" id="migrantConsole">Migrant Output >>></div>
+      </div>
+
+      <div class="page">
+        <h1>Admin Page</h1>
+        <h2>UNT: </h2>
+        <h2 id="totalCollected">Total LOCKr collected: </h2>
+        <input id="Air Drop" type="button" value="Air Drop" onClick="airDrop()">
+        <input id="Withdraw deposit" type="button" value="Withdraw Deposit" onClick="withdraw()">
+        <input id="Print migrants" type="button" value="Print Migrants" onClick="printMigrants()">
+        <div class="console" id="adminConsole">Admin Output >>></div>
+      </div>
+        
+    </div>
+   
+  <script src="app.js"></script>
+  <script src="printLayer.js"></script>
+  <script src="provider.js"></script>
+  <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.4/web3.min.js"></script>
+  <script src="migrationABI.js"></script>
+  <script src="tokenABI.js"></script>
+  <script src="Constants.js"></script>
+</body>
+</html>
