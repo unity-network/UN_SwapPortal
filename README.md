@@ -46,9 +46,11 @@ First, holders deposit their LOCK on a team's address, one by one. When the give
 
 4. The deployer of the UNT contract, and thus single holder of all UNT tokens must give an allowance to the migration contract big enough to provide for all the UNT being air dropped. This means that the migration contract must have access to the UNT funds, otherwise it will not be able to airdrop the token. More specifically, this will be done by calling "approve()" on the UNT token contract. The approved amount should be equal to the total amount of LOCK tokens deposited by the holders. 
 
-5. When the deadline arrives, an already prepared script will be executed by the team by pressing a button in the admin frontend platform. A list of depositors and amounts will be compiled and a transaction sent to the migration contract with this list as parameter. 
+5. When the deadline arrives, the UNT-WETH pool should be created on Uniswap, before air dropping the tokens. This prevents a malicious user from creating the pool before the Team.
 
-6. The address pushing the migrate button reffered in step (5) MUST BE THE DEPLOYER OF THE UNT TOKEN. It will now have to sign the transaction on MetaMask and have enough ETH to pay one fee of around half a block size. The value should be in the range of the thousands of dollars (according to current gas price). Depending on the amount of holders, there might be a need to split this transaction in two or three. This split will be done automatically, but I explain why for the more curious:
+6. After the pool is created, an already prepared script will be executed by the team by pressing a button in the admin frontend platform. A list of depositors and amounts will be compiled and a transaction sent to the migration contract with this list as parameter. 
+
+7. The address pushing the migrate button reffered in step (5) MUST BE THE DEPLOYER OF THE UNT TOKEN. It will now have to sign the transaction on MetaMask and have enough ETH to pay one fee of around half a block size. The value should be in the range of the thousands of dollars (according to current gas price). Depending on the amount of holders, there might be a need to split this transaction in two or three. This split will be done automatically, but I explain why for the more curious:
 
       a. If a single transaction spends more gas than the block gas limit, it gets reverted when it runs out of gas and the sender loses all the fees paid up to that point. This can amount to thousands of dollars lost. 
 
@@ -58,4 +60,4 @@ First, holders deposit their LOCK on a team's address, one by one. When the give
 
       An interesting thread on the topic of batching transactions can be found here: https://www.reddit.com/r/ethdev/comments/8ofb32/batching_erc20_transfers_can_let_you_send_over/
  
-7. Confirmation will be received for each batch transfer transaction that goes through. In the end of the process, the total UNT air dropped will be compared to the LOCK deposited and the two must match. The approved UNT amount for the migration contract on behalf of the deployer should now be 0.
+8. Confirmation will be received for each batch transfer transaction that goes through. In the end of the process, the total UNT air dropped will be compared to the LOCK deposited and the two must match. The approved UNT amount for the migration contract on behalf of the deployer should now be 0.
